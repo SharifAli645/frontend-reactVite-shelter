@@ -14,7 +14,18 @@ const AnimalForm: React.FC<AnimalFormProps> = ({ onClose, onSubmit, initialData 
   const editMode = !!initialData;
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    species: Animal['species'];
+    breed: string;
+    age: string;
+    status: Animal['status'];
+    description: string;
+    hasChip: boolean;
+    isSterilized: boolean;
+    origin: string;
+    veterinaryNotes: string;
+  }>({
     name: initialData?.name ?? '',
     species: initialData?.species ?? 'Perro',
     breed: initialData?.breed ?? '',
@@ -144,7 +155,7 @@ const AnimalForm: React.FC<AnimalFormProps> = ({ onClose, onSubmit, initialData 
               <div className="input-group">
                 <label>Estado en el refugio</label>
                 <div className="status-chips">
-                  {['Disponible', 'En Cuarentena', 'Médico', 'Adoptado'].map(status => (
+                  {(['Disponible', 'En Cuarentena', 'Médico', 'Adoptado'] as const).map(status => (
                     <button
                       key={status}
                       type="button"
