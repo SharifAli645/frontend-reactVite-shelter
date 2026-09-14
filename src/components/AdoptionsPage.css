@@ -1,0 +1,226 @@
+.adoptions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.adoption-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.adoption-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 20px;
+}
+
+.adoption-animal-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.adoption-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.adoption-animal-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.adoption-adopter-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.adoption-adopter-email {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adoption-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+.adoption-status-badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.adoption-status-badge.pendiente {
+  background: rgba(245, 185, 66, 0.15);
+  color: #c97b00;
+}
+
+.adoption-status-badge.aprobada {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.adoption-status-badge.completada {
+  background: rgba(74, 103, 65, 0.12);
+  color: var(--primary);
+}
+
+.adoption-status-badge.cancelada {
+  background: rgba(0, 0, 0, 0.06);
+  color: #888;
+}
+
+.adoption-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.adoption-btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adoption-btn.approve {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.adoption-btn.approve:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.adoption-btn.complete {
+  background: rgba(74, 103, 65, 0.1);
+  color: var(--primary);
+}
+
+.adoption-btn.complete:hover {
+  background: rgba(74, 103, 65, 0.2);
+}
+
+.adoption-btn.cancel {
+  background: rgba(229, 57, 53, 0.08);
+  color: #e53935;
+}
+
+.adoption-btn.cancel:hover {
+  background: rgba(229, 57, 53, 0.16);
+}
+
+.adoption-btn.delete {
+  background: rgba(0, 0, 0, 0.05);
+  color: #888;
+}
+
+.adoption-btn.delete:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #444;
+}
+
+/* AdoptionForm */
+.adoption-form-modal {
+  max-width: 600px !important;
+  padding: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.animal-select-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.animal-select-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.animal-select-card:hover {
+  border-color: var(--primary);
+  background: rgba(74, 103, 65, 0.04);
+}
+
+.animal-select-card.selected {
+  border-color: var(--primary);
+  background: rgba(74, 103, 65, 0.08);
+  box-shadow: 0 0 0 3px rgba(74, 103, 65, 0.15);
+}
+
+.animal-select-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.animal-select-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.animal-select-breed {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.no-available {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .adoption-card {
+    flex-wrap: wrap;
+  }
+
+  .adoption-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .adoption-form-modal {
+    padding: 30px;
+  }
+}

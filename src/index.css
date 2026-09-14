@@ -1,0 +1,38 @@
+:root {
+  /* Paleta de Colores - Inspiración Refugio Moderno */
+  --primary: #4a6741; /* Verde Salvia Profundo */
+  --primary-light: #6b8e5e;
+  --secondary: #d4a373; /* Arena/Madera */
+  --accent: #e9edc9; /* Crema suave */
+  --background: #fefae0; /* Off-white cálido */
+  --text: #283618; /* Marrón verdoso oscuro */
+  --text-muted: #606c38;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --glass: rgba(255, 255, 255, 0.7);
+
+  /* Tipografía */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
